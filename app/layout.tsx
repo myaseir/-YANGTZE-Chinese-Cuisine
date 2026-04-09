@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+// These fonts are excellent for a premium, fine-dining aesthetic
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
 const playfair = Playfair_Display({ 
   subsets: ["latin"], 
@@ -12,8 +13,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Cakes By Kalsoom | Bespoke Luxury Cakes Rawalpindi",
-  description: "Artisanal custom cakes, wedding desserts, and gourmet treats in Rawalpindi. Handcrafted with love and the finest ingredients.",
+  title: "Yangtze Chinese Cuisine | Premium Dining",
+  description: "A premier culinary destination blending centuries-old Chinese traditions with modern elegance. Experience authentic flavors, signature tastings, and exclusive private dining.",
 };
 
 export default function RootLayout({
@@ -21,7 +22,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.variable} ${playfair.variable} font-sans bg-[#FCFAFB] text-stone-900 antialiased flex flex-col min-h-screen`}>
+      <body 
+        className={`${montserrat.variable} ${playfair.variable} font-sans bg-zinc-950 text-gray-300 antialiased flex flex-col min-h-screen selection:bg-amber-600/30 selection:text-amber-200`}
+      >
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

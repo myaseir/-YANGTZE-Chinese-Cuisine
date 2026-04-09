@@ -2,62 +2,77 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-stone-950 text-stone-400 py-20 border-t border-stone-800">
+    <footer className="bg-zinc-950 text-gray-400 py-20 border-t border-zinc-800/50">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         
+        {/* Brand Column */}
         <div className="md:col-span-1">
-          <h3 className="text-3xl font-serif text-white italic mb-6">Cakes By Kalsoom</h3>
-          <p className="text-[11px] leading-relaxed font-light tracking-wide">
-            Luxury patisserie located in Rawalpindi. We specialize in bespoke cake artistry for life's most precious moments.
+          <div className="mb-6 flex flex-col leading-none">
+            <span className="text-2xl font-serif tracking-widest text-white mb-1">YANGTZE</span>
+            <span className="text-[9px] tracking-[0.4em] uppercase font-sans text-amber-500 font-light">
+              Chinese Cuisine
+            </span>
+          </div>
+          <p className="text-[11px] leading-relaxed font-light tracking-wide text-gray-400">
+            A premier culinary destination in Islamabad. We blend centuries-old traditions with modern elegance for an unforgettable dining experience.
           </p>
         </div>
         
+        {/* Location Column */}
         <div>
-          <h4 className="text-white text-[10px] tracking-[0.3em] uppercase mb-8 font-semibold">The Studio</h4>
-          <address className="not-italic text-[11px] font-light leading-loose">
+          <h4 className="text-white text-[10px] tracking-[0.3em] uppercase mb-8 font-semibold">Location</h4>
+          <address className="not-italic text-[11px] font-light leading-loose text-gray-400">
             Rafi, Western Drive Block<br />
-            Rawalpindi, 46000<br />
+            Islamabad, 44000<br />
             Pakistan
           </address>
         </div>
 
+        {/* Reservations Column */}
         <div>
-          <h4 className="text-white text-[10px] tracking-[0.3em] uppercase mb-8 font-semibold">Orders</h4>
-          <div className="flex flex-col gap-2 text-[11px] font-light">
-            <a href="tel:03335539381" className="hover:text-amber-500 text-stone-200 transition-colors">+92 333 5539381</a>
-            <p>Mon - Sat: 10AM - 8PM</p>
+          <h4 className="text-white text-[10px] tracking-[0.3em] uppercase mb-8 font-semibold">Reservations</h4>
+          <div className="flex flex-col gap-2 text-[11px] font-light text-gray-400">
+            <a href="tel:03350532333" className="hover:text-amber-500 text-gray-200 transition-colors duration-300">
+              +92 335 0532333
+            </a>
+            <p>Mon - Sun: 12PM - 11PM</p>
           </div>
         </div>
 
+        {/* Social Column */}
         <div>
           <h4 className="text-white text-[10px] tracking-[0.3em] uppercase mb-8 font-semibold">Social</h4>
-          <div className="flex gap-6 text-[11px] font-light">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white underline underline-offset-4 transition-colors">Instagram</a>
-            <a href="https://wa.me/923335539381" target="_blank" rel="noopener noreferrer" className="hover:text-white underline underline-offset-4 transition-colors">WhatsApp</a>
+          <div className="flex gap-6 text-[11px] font-light text-gray-400">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors duration-300">
+              Instagram
+            </a>
+            <a href="https://wa.me/923350532333" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors duration-300">
+              WhatsApp
+            </a>
           </div>
         </div>
       </div>
       
       {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center text-[10px] tracking-[0.2em] uppercase gap-4">
-        <div className="text-stone-500">
-          © {currentYear} CAKES BY KALSOOM
+      <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center text-[10px] tracking-[0.2em] uppercase gap-4">
+        <div className="text-zinc-500">
+          © {currentYear} YANGTZE CHINESE CUISINE
         </div>
         
-        <div className="text-stone-500 flex items-center gap-2">
+        <div className="text-zinc-500 flex items-center gap-2">
           <span>Digital Experience by</span>
           <a 
             href="https://glacialabs.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-stone-300 hover:text-amber-500 font-bold transition-colors tracking-[0.3em]"
+            className="text-gray-300 hover:text-amber-500 font-bold transition-colors duration-300 tracking-[0.3em]"
           >
             GLACIA LABS
           </a>
         </div>
 
-        <div className="text-stone-500">
-          Handcrafted in Rawalpindi
+        <div className="text-zinc-500">
+          Premium Dining in Islamabad
         </div>
       </div>
     </footer>

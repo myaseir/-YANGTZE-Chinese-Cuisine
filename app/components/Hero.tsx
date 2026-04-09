@@ -1,51 +1,56 @@
-"use client";
+import React from 'react';
 
 export default function Hero() {
-  const ORDER_LINK = "https://wa.me/923335539381";
-  const HERO_IMAGE = "https://images.unsplash.com/photo-1595272568891-123402d0fb3b?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
   return (
-    <section className="relative w-full h-screen flex items-center justify-center bg-stone-100 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={HERO_IMAGE} 
-          alt="Artisanal Cake Design" 
-          className="w-full h-full object-cover scale-105 animate-slow-zoom"
-        />
-        <div className="absolute inset-0 bg-stone-900/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900/60"></div>
+    <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-zinc-950">
+      {/* Background Image with Premium Dark Overlay */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
+        style={{
+          // Using a high-quality, moody Unsplash image placeholder for an upscale dining vibe
+          backgroundImage: "url('https://images.unsplash.com/photo-1552611052-33e04de081de?q=80&w=2564&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90"></div>
       </div>
 
-      <div className="relative z-20 flex flex-col items-center text-center px-6">
-        <h1 className="text-[12vw] md:text-[8rem] font-serif text-white leading-none tracking-tighter mb-4 animate-fade-in drop-shadow-lg">
-          Cakes By <span className="italic block md:inline">Kalsoom</span>
-        </h1>
+      {/* Main Content Container */}
+      {/* Added pt-20 md:pt-24 here to push the content below the fixed navbar */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-8 lg:px-12 w-full max-w-6xl mx-auto pt-20 md:pt-24">
         
-        <div className="h-px w-12 md:w-24 bg-white mb-8 opacity-80"></div>
+        {/* Accent Subtitle */}
+        <span className="text-amber-500 font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-6 animate-fade-in-up">
+          Authentic Heritage, Modern Elegance
+        </span>
 
-        <div className="flex flex-col items-center gap-3 mb-12">
-          <p className="text-xs md:text-lg tracking-[0.4em] uppercase text-white font-light">
-            Bespoke Patisserie <span className="mx-2">&</span> Custom Bakes
-          </p>
-          <span className="text-[10px] tracking-[0.6em] uppercase text-stone-200">Rawalpindi</span>
+        {/* Main Title */}
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-serif text-white leading-tight mb-8 drop-shadow-2xl">
+          Yangtze <br className="hidden md:block" />
+          <span className="text-amber-400 font-light italic">Chinese Cuisine</span>
+        </h1>
+
+        {/* Description */}
+        <p className="max-w-2xl text-gray-300 text-sm sm:text-base md:text-lg mb-12 font-light leading-relaxed tracking-wide">
+          Experience a culinary journey along the great river. We blend centuries-old recipes with contemporary artistry to bring you an unforgettable dining experience.
+        </p>
+
+        {/* Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+          <button className="px-8 py-4 sm:px-10 bg-amber-600 hover:bg-amber-500 text-white text-sm md:text-base font-semibold tracking-widest uppercase transition-all duration-300 ease-in-out transform hover:-translate-y-1 rounded-sm shadow-[0_0_20px_rgba(217,119,6,0.3)]">
+            Reserve a Table
+          </button>
+          
+          <button className="px-8 py-4 sm:px-10 bg-transparent border border-white/40 hover:border-amber-400 hover:text-amber-400 text-white text-sm md:text-base font-semibold tracking-widest uppercase transition-all duration-300 ease-in-out rounded-sm backdrop-blur-sm">
+            Explore Menu
+          </button>
         </div>
-
-        <a 
-          href={ORDER_LINK}
-          target="_blank"
-          className="group relative px-10 py-4 md:px-16 md:py-6 bg-white text-stone-900 text-[10px] md:text-xs tracking-[0.5em] uppercase font-bold overflow-hidden transition-all duration-700 hover:text-white"
-        >
-          <span className="relative z-10">Order Your Cake</span>
-          <div className="absolute inset-0 bg-amber-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
-        </a>
       </div>
 
-      <style jsx>{`
-        @keyframes slow-zoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
-        .animate-slow-zoom { animation: slow-zoom 25s infinite alternate ease-in-out; }
-        .animate-fade-in { animation: fadeIn 2s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-      `}</style>
+      {/* Elegant Scroll Indicator (Hidden on very small screens) */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-3 opacity-60">
+        <span className="text-white text-[10px] tracking-[0.2em] uppercase">Discover</span>
+        <div className="w-[1px] h-16 bg-gradient-to-b from-amber-400 to-transparent"></div>
+      </div>
     </section>
   );
 }
